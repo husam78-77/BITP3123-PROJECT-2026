@@ -1,0 +1,29 @@
+<!-- First Commit - Husam Abdulatef Ahmed Yousef Harpah - B032320128 -->
+<!-- git commit -m "Add Library SOAP XSD schema - Husam B032320128" -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://smartcampus.com/library"
+           targetNamespace="http://smartcampus.com/library"
+           elementFormDefault="qualified">
+
+    <!-- Request: check if a book is available by ID -->
+    <xs:element name="getBookAvailabilityRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="bookId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Response: returns title and availability -->
+    <xs:element name="getBookAvailabilityResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="bookId"    type="xs:long"/>
+                <xs:element name="title"     type="xs:string"/>
+                <xs:element name="author"    type="xs:string"/>
+                <xs:element name="available" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
